@@ -1,0 +1,28 @@
+{
+  "sourceMaps": true,
+  "env": {
+    "docs-browser-development": {
+      "presets": ["es2015", "react", "stage-1"],
+      "plugins": [
+        "transform-runtime"
+      ]
+    },
+    "docs-browser-production": {
+      "presets": ["es2015", "react", "stage-1"],
+      "plugins": [
+        "transform-runtime",
+        "transform-react-remove-prop-types",
+        "transform-react-constant-elements",
+        "transform-react-inline-elements"
+      ]
+    },
+    "release": {
+      "presets": ["es2015", "react", "stage-1"],
+      "plugins": [
+        "transform-runtime",
+        ["transform-react-remove-prop-types", {"mode": "wrap"}],
+        "transform-dev-warning"
+      ]
+    }
+  }
+}
